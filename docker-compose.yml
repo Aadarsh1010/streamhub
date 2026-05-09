@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  streamhub:
+    build: .
+    ports:
+      - "5000:5000"
+    environment:
+      - FLASK_ENV=production
+      - MOVIEBOX_API_HOST_V2=h5-api.aoneroom.com
+    restart: unless-stopped
+    container_name: streamhub
